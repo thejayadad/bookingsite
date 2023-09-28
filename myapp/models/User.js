@@ -30,9 +30,9 @@ const userSchema = new Schema(
         type: String,
         required: true,
       },
-      admin: {
-        type: Boolean,
-        default: false,
+      role: {
+        type: String,
+        default: "User"
       },
     },
     { timestamps: true }
