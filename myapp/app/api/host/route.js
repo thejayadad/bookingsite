@@ -1,5 +1,5 @@
 import db from "@/lib/db";
-import { verifyJwtToken, verifyToken } from '@/lib/jwt'
+// import { verifyJwtToken, verifyToken } from '@/lib/jwt'
 import Host from "@/models/Host";
 
 export async function GET(req) {

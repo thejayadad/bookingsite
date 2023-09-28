@@ -46,10 +46,6 @@ const hostSchema = new Schema({
       type: Number,
       required: true,
     },
-    featured: {
-      type: Boolean,
-      default: false,
-    },
   });
 
 export default mongoose.models.Host || mongoose.model("Host", hostSchema);

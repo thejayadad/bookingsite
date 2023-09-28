@@ -2,12 +2,12 @@
 
 import React from 'react'
 
-const Host = () => {
+const UpdateHost = () => {
   return (
     <section>
-        Host
+        UpdateHost
     </section>
   )
 }
 
-export default Host
+export default UpdateHost

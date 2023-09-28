@@ -1,3 +1,4 @@
+import Provider from '@/SessionProvider'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -13,8 +14,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
 
-        {children}
+      <Provider>
+      {children}
 
+      </Provider>
       </body>
     </html>
   )
