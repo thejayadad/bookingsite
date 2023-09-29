@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const HostSchema = new mongoose.Schema({
+const RideSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true,
@@ -46,4 +46,4 @@ const HostSchema = new mongoose.Schema({
     },
   });
 
-export default mongoose.models.Host || mongoose.model("Host", HostSchema);
+export default mongoose.models.Ride || mongoose.model("Ride", RideSchema);
