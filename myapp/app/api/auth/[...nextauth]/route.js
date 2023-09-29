@@ -9,10 +9,20 @@ const handler = NextAuth({
     providers: [
         CredentialsProvider({
             type: 'credentials',
+            profile(profile){
+                return {
+                    id: profile.sub,
+                    username: profile.name,
+                    email: profile.email,
+                    img: profile.picture,
+                    role: profile.role ?? 'user'
+                }
+            },
             credentials: {
                 username: {label: 'Email', type: 'text', placeholder: 'Ray Lewis'},
-                password: {label: 'Password', type: 'password'}
+                password: {label: 'Password', type: 'password'},
             },
+
 
             async authorize(credentials, req){
                 const {email, password} = credentials
@@ -53,6 +63,7 @@ const handler = NextAuth({
             if(user){
                 token.accessToken = user.accessToken
                 token._id = user._id
+                token.role = user.role
             }
 
             return token
@@ -61,6 +72,8 @@ const handler = NextAuth({
             if(token){
                 session.user._id = token._id
                 session.user.accessToken = token.accessToken
+                session.user.role = token.role
+
             }
 
             return session
