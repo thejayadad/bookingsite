@@ -12,6 +12,7 @@ const Register = () => {
     const [img, setImg] = useState("")
     const [city, setCity] = useState("")
     const [phone, setPhone] = useState("")
+    const [role, setRole] = useState("User")
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -27,12 +28,12 @@ const Register = () => {
         }
 
         try {
-            const res = await fetch('http://http:localhost:3000/api/register', {
+            const res = await fetch('http://localhost:3000/api/register', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 method: 'POST',
-                body: JSON.stringify({username, email, password, img, city, phone})
+                body: JSON.stringify({username, email, password, img, city, phone, role})
             })
 
             console.log(await res.json())
@@ -60,7 +61,7 @@ const Register = () => {
                     <input type="text" placeholder='Image...' onChange={(e) => setImg(e.target.value)} />
                     <input type="text" placeholder='City...' onChange={(e) => setCity(e.target.value)} />
                     <input type="text" placeholder='Phone...' onChange={(e) => setPhone(e.target.value)} />
-
+                    <input type="text" placeholder='Role...' onChange={(e) => setRole(e.target.value)} />
                     <button >Register</button>
                     <button  onClick={() => signIn()}>
                         Don&apos;t have an account? <br /> Register now.
