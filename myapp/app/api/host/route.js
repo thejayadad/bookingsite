@@ -13,8 +13,7 @@ export async function GET(req) {
     }
 }
 
-export async function POST(req) {
-    await db.connect()
+export async function POST(req) {    await db.connect()
 
     // const accessToken = req.headers.get("authorization")
     // const token = accessToken.split(' ')[1]

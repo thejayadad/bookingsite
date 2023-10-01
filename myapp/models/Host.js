@@ -46,4 +46,4 @@ const HostSchema = new mongoose.Schema({
     },
   });
 
-export default mongoose.models.Host || mongoose.model("Host", HostSchema);
+export default mongoose.models.Host || mongoose.model("Host", HostSchema);  

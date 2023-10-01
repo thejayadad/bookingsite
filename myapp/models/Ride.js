@@ -17,7 +17,12 @@ const RideSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    hostid: {
+      type: String,
+      required: true
+    },
     rideNumbers: [{ number: Number, unavailableDates: {type: [Date]}}],
+
 
   },   { timestamps: true }
   );
