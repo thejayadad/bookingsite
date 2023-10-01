@@ -6,11 +6,16 @@ export async function POST(req, res) {
     await db.connect();
 
     try {
-        const body = await req.json()
-        const newRide = Ride.create(body);
-        await newRide.save();
-        const {...hostid} = newRide
+        const body = await req.json();
+        const { hostid, ...rideData } = body; // Extract hostid and ride data
+
+        // Add hostid to the ride data
+        rideData.hostid = hostid;
+
+        const newRide = await Ride.create(rideData); // Create a new Ride document
+
         const host = await Host.findById(hostid);
+
         if (!host) {
             return res.status(404).json({ error: "Host not found" });
         }
