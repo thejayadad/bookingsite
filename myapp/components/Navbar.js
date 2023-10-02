@@ -23,7 +23,7 @@ const Navbar = () => {
   }`;
 
   return (
-    <header className='sticky top-0 bg-white z-10 border-b-1'>
+    <header className='sticky top-0 bg-primary-background z-10 border-b-1'>
       <div className='flex items-center justify-center mx-auto max-w-[300px] py-6 px-4'>
         <div className='mr-16'>
           <Link href='/'>

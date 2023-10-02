@@ -1,31 +1,60 @@
-import React from 'react';
-import { FaPhone, FaEnvelope } from 'react-icons/fa'; // Import React Icons
+'use client'
+
+import React from 'react'
+import { FaMapMarkerAlt, FaCalendarAlt, FaUsers } from 'react-icons/fa';
+
 
 const Header = () => {
   return (
-    <header className="py-12 px-4 bg-primary-background text-white cursor-pointer">
-      <div className="container mx-auto flex flex-col justify-around items-center">
-        <div className="logo text-2xl text-center font-bold">
-          <span className="text-blue-500">Host</span>
-          <span className="text-yellow-500">My</span>
-          <span className="text-green-500">Ride</span>
-          <p className=' font-light text-lg text-secondary-background mt-2'>
-            The Go to Spot for Hosting Your Ride
-          </p>
-          <div className='flex justify-around text-gray-300 mt-2'>
-            <div className='flex items-center'>
-              <FaPhone className='h-[14px] text-white mr-1 hover:text-secondary-background' />
-              <span className='text-sm hover:text-secondary-background'>Contact Number</span>
-            </div>
-            <div className='flex items-center '>
-              <FaEnvelope className='h-[14px] text-white hover:text-secondary-background' />
-              <span className='text-sm mr-1 hover:text-secondary-background'>Email</span>
-            </div>
+    <header>
+          <section
+      className="bg-primary-background text-white py-48"
+      style={{ backgroundImage: 'url("https://images.pexels.com/photos/733745/pexels-photo-733745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', backgroundSize: 'cover' }}
+    >
+      <div className="container mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">Find Your Ride</h1>
+        <p className="text-lg md:text-xl mb-10">
+          Explore our wide range of rides and book your next adventure.
+        </p>
+
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Enter Location"
+              className="py-3 px-4 pr-12 rounded-full bg-gray-800 text-white w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            />
+            <FaMapMarkerAlt className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-400" />
           </div>
+
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Check-In Date"
+              className="py-3 px-4 pr-12 rounded-full bg-gray-800 text-white w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            />
+            <FaCalendarAlt className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-400" />
+          </div>
+
+          <div className="relative">
+            <input
+              type="number"
+              placeholder="Seats"
+              className="py-3 px-4 pr-12 rounded-full bg-gray-800 text-white w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            />
+            <FaUsers className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-400" />
+          </div>
+
+          <button
+            className={`bg-secondary-background text-white py-3 px-6 rounded-full hover:bg-opacity-90 transition-all ease-in-out duration-300`}
+          >
+            Search
+          </button>
         </div>
       </div>
+    </section>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
